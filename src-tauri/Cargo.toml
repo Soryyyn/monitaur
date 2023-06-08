@@ -1,8 +1,8 @@
 [package]
 name = "monitaur"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "Monitor management tool"
+authors = ["Soryn Bächli"]
 license = ""
 repository = ""
 edition = "2021"
