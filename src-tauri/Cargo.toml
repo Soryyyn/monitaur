@@ -18,7 +18,8 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 specta = "1.0.4"
 tauri-specta = { version = "1.0.2", features = ["typescript"] }
-ddc-hi = "0.4.1"
+ddc-hi = { version = "0.5", features = ["log-kv"], git = "https://github.com/arcnmx/ddc-hi-rs", branch = "v0.5.x" }
+mccs-db = "0.2.0"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
