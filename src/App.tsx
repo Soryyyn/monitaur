@@ -26,9 +26,7 @@ function App() {
                 </a>
             </div>
 
-            <p className="bg-blue-500 p-4">
-                Click on the Tauri, Vite, and React logos to learn more.
-            </p>
+            <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
             <form
                 className="row"
