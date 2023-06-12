@@ -1,11 +1,9 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use displays::Displays;
-
 mod displays;
 
-// use ddc_hi::{traits::Ddc, Display};
+use displays::Displays;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -14,7 +12,7 @@ fn greet(name: &str) -> String {
 }
 
 fn main() {
-    let displays = Displays::init_displays();
+    let displays = Displays::new();
 
     for display in displays.get_active_displays().iter() {
         println!("{}", display.brightness.value())

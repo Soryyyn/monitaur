@@ -1729,7 +1729,6 @@ dependencies = [
 name = "monitaur"
 version = "0.0.0"
 dependencies = [
- "anyhow",
  "ddc-hi",
  "mccs-db 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde",
