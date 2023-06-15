@@ -13,12 +13,16 @@ fn greet(name: &str) -> String {
 }
 
 fn main() -> Result<()> {
-    let displays: Displays = Displays::new().unwrap();
+    let displays: Displays = Displays::new()?;
 
     for display in displays.get_active_displays().iter() {
         println!(
             "brightness for monitor '{}' is {}%",
-            display.display.info().model_name.unwrap(),
+            display
+                .display
+                .info()
+                .model_name
+                .expect("Model name for monitor not available"),
             display.brightness.value()
         )
     }
