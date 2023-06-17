@@ -47,4 +47,17 @@ impl Displays {
             .get_vcp_feature(code as FeatureCode)
             .with_context(|| format!("Failed getting VCP value for code {:?}", code))
     }
+
+    // Set the value for a specific vcp code.
+    pub fn set_value_for_vcp(
+        &self,
+        display: &mut Display,
+        code: VCPFeatureCode,
+        value: u16,
+    ) -> Result<()> {
+        display
+            .handle
+            .set_vcp_feature(code as u8, value)
+            .with_context(|| format!("Failed setting VCP value for code {:?}", code))
+    }
 }

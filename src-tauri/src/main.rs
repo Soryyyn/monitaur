@@ -15,16 +15,22 @@ fn greet(name: &str) -> String {
 fn main() -> Result<()> {
     let displays: Displays = Displays::new()?;
 
-    for display in displays.get_active_displays().iter() {
+    for active_display in displays.get_active_displays().iter() {
+        // displays.set_value_for_vcp(
+        //     &mut active_display.display,
+        //     monitaur::VCPFeatureCode::Brightness,
+        //     100,
+        // );
+
         println!(
             "brightness for monitor '{}' is {}%",
-            display
+            active_display
                 .display
                 .info()
                 .model_name
                 .expect("Model name for monitor not available"),
-            display.brightness.value()
-        )
+            active_display.brightness.value()
+        );
     }
 
     tauri::Builder::default()
